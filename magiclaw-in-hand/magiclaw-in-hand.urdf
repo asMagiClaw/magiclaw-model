@@ -1,0 +1,463 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="magiclaw-in-hand">
+    <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0" />
+    </material>
+    <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0" />
+    </material>
+    <material name="orange">
+        <color rgba="1.0 0.2 0.0 1.0" />
+    </material>
+    <link name="shell">
+        <inertial>
+            <origin xyz="0.09215419082197362 -3.0360999473407925e-08 0.003155929862125859" rpy="0.0 0.0 0.0" />
+            <mass value="1.1547124958310249" />
+            <inertia ixx="0.0011731060061113516" iyy="0.002535696012427195" izz="0.0021289998515155277" ixy="8.443177599909338e-09" iyz="-1.5227905621184584e-08" ixz="0.00031236232114537456" />
+        </inertial>
+        <visual name="shell_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/shell.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision name="shell_collision">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/shell.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="handle">
+        <inertial>
+            <origin xyz="-0.07145222009248317 0.0344832299745334 3.212940330090979e-07" rpy="0.0 7.843208339186924e-47 0.0" />
+            <mass value="0.6418238445152238" />
+            <inertia ixx="0.0014048045539435078" iyy="0.0015357716975840986" izz="0.00244021792605567" ixy="0.0005206327549369438" iyz="9.413141347223306e-10" ixz="2.9363993420252465e-09" />
+        </inertial>
+        <visual name="handle_visual">
+            <origin xyz="0.007071070229011083 0.007071070000000023 -2.2050627924188727e-17" rpy="-1.5707963267948966 8.509000628263035e-17 -3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/handle.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision name="handle_collision">
+            <origin xyz="0.007071070229011083 0.007071070000000023 -2.2050627924188727e-17" rpy="-1.5707963267948966 8.509000628263035e-17 -3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/handle.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="trigger">
+        <inertial>
+            <origin xyz="-0.09392272169448564 5.809422311998735e-07 -0.02324460484851601" rpy="0.0 -0.0 -4.861730685829017e-63" />
+            <mass value="0.3412860843603137" />
+            <inertia ixx="0.00014025758488175647" iyy="0.00034549430290121524" izz="0.00022815403326676307" ixy="-1.4745741901706927e-08" iyz="-5.166503663668916e-09" ixz="-0.00012868134776750572" />
+        </inertial>
+        <visual name="trigger_visual">
+            <origin xyz="2.2901108565065442e-10 -1.7763568394002505e-17 -2.2142712203524214e-17" rpy="-7.468827474833592e-16 -3.392055454101157e-16 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/trigger.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="black" />
+        </visual>
+        <collision name="trigger_collision">
+            <origin xyz="2.2901108565065442e-10 -1.7763568394002505e-17 -2.2142712203524214e-17" rpy="-7.468827474833592e-16 -3.392055454101157e-16 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/trigger.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="cold_shoe">
+        <inertial>
+            <origin xyz="-0.0004682304054112363 5.628377166547514e-10 -0.006272930329272492" rpy="0.0 5.551115123125784e-17 0.0" />
+            <mass value="0.06809085000208817" />
+            <inertia ixx="4.601940388134737e-06" iyy="6.473933916345846e-06" izz="9.214205368077138e-06" ixy="1.6287734227086885e-20" iyz="-3.1706155967683238e-21" ixz="-1.93822732774427e-07" />
+        </inertial>
+        <visual name="cold_shoe_visual">
+            <origin xyz="-1.8646048283166293e-09 5.628377092921376e-10 3.3163871027142024e-09" rpy="-1.5707963267948968 2.2204460492503136e-16 8.539238726449453e-17" />
+            <geometry>
+                <mesh filename="meshes/cold_shoe.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="black" />
+        </visual>
+        <collision name="cold_shoe_collision">
+            <origin xyz="-1.8646048283166293e-09 5.628377092921376e-10 3.3163871027142024e-09" rpy="-1.5707963267948968 2.2204460492503136e-16 8.539238726449453e-17" />
+            <geometry>
+                <mesh filename="meshes/cold_shoe.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="phone_holder">
+        <inertial>
+            <origin xyz="0.007601536236942366 0.0005268066449774228 -0.04504908884447942" rpy="0.0 -0.0 0.0" />
+            <mass value="0.05440462887363338" />
+            <inertia ixx="4.6792972676604444e-05" iyy="3.961233466886723e-05" izz="2.4845257814242174e-05" ixy="4.75980651491826e-06" iyz="2.246087384809657e-06" ixz="1.3046661814500565e-05" />
+        </inertial>
+        <visual name="phone_holder_visual">
+            <origin xyz="-0.0089586470402129 -5.628377092921376e-10 -0.008590994105805222" rpy="-1.7173352050107626 0.13097033132930153 1.857178709207672" />
+            <geometry>
+                <mesh filename="meshes/phone_holder.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision name="phone_holder_collision">
+            <origin xyz="-0.0089586470402129 -5.628377092921376e-10 -0.008590994105805222" rpy="-1.7173352050107626 0.13097033132930153 1.857178709207672" />
+            <geometry>
+                <mesh filename="meshes/phone_holder.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="phone">
+        <inertial>
+            <origin xyz="-0.002752244111735278 0.0013179023658566624 0.0019220792654846797" rpy="0.0 1.540743955509789e-33 3.081487911019578e-33" />
+            <mass value="0.5883914302022325" />
+            <inertia ixx="0.0011662674635849308" iyy="0.000338261540561514" izz="0.0010894133034562963" ixy="-0.000256040292397619" iyz="-8.01017770773369e-05" ixz="-0.00013012142460130631" />
+        </inertial>
+        <visual name="phone_visual">
+            <origin xyz="4.983532604363461e-09 -5.994024743216642e-10 3.960968655292163e-09" rpy="0.2672034495376104 -1.06185132029544 -0.5209576351259139" />
+            <geometry>
+                <mesh filename="meshes/phone.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="black" />
+        </visual>
+        <collision name="phone_collision">
+            <origin xyz="4.983532604363461e-09 -5.994024743216642e-10 3.960968655292163e-09" rpy="0.2672034495376104 -1.06185132029544 -0.5209576351259139" />
+            <geometry>
+                <mesh filename="meshes/phone.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_drive_beam">
+        <inertial>
+            <origin xyz="0.01757050734686793 -0.001128495479470839 1.1138369948246463e-08" rpy="0.0 -0.0 0.0" />
+            <mass value="0.0886876201001314" />
+            <inertia ixx="6.723346716196291e-06" iyy="4.4516688165103114e-05" izz="4.1718345694979854e-05" ixy="-3.22824199390498e-06" iyz="-7.584848962981143e-13" ixz="1.6462224338016347e-11" />
+        </inertial>
+        <visual name="left_drive_beam_visual">
+            <origin xyz="-0.03149999583242275 -0.03500000000000067 -2.5465740627339528e-17" rpy="-3.141592653589793 -2.19168257540788e-17 1.5707963267948966" />
+            <geometry>
+                <mesh filename="meshes/left_drive_beam.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision name="left_drive_beam_collision">
+            <origin xyz="-0.03149999583242275 -0.03500000000000067 -2.5465740627339528e-17" rpy="-3.141592653589793 -2.19168257540788e-17 1.5707963267948966" />
+            <geometry>
+                <mesh filename="meshes/left_drive_beam.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_follow_beam">
+        <inertial>
+            <origin xyz="0.023795416213040852 2.0772272790736678e-14 -4.1876224710080124e-17" rpy="0.0 -0.0 0.0" />
+            <mass value="0.07336934646340006" />
+            <inertia ixx="4.571144692112242e-06" iyy="3.0302030975941276e-05" izz="2.6551473727030785e-05" ixy="-1.1492543028346349e-17" iyz="4.0731742552442324e-18" ixz="1.2449424761901295e-20" />
+        </inertial>
+        <visual name="left_follow_beam_visual">
+            <origin xyz="-0.010499995832419895 -0.0070000000000000045 -5.082739784612045e-17" rpy="3.141592653589793 1.0642475748439586e-16 1.5707963267948966" />
+            <geometry>
+                <mesh filename="meshes/left_follow_beam.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision name="left_follow_beam_collision">
+            <origin xyz="-0.010499995832419895 -0.0070000000000000045 -5.082739784612045e-17" rpy="3.141592653589793 1.0642475748439586e-16 1.5707963267948966" />
+            <geometry>
+                <mesh filename="meshes/left_follow_beam.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_finger_base">
+        <inertial>
+            <origin xyz="0.03355290889928302 0.0042837468242364765 -0.00014238927919081368" rpy="0.0 -2.698802673467014e-79 -1.1828759155913308e-94" />
+            <mass value="0.21505299028592448" />
+            <inertia ixx="6.38483005430561e-05" iyy="8.066081605719556e-05" izz="8.362190041833611e-05" ixy="2.3171140214517415e-06" iyz="-1.1471065987766908e-07" ixz="-1.5573140016734714e-07" />
+        </inertial>
+        <visual name="left_finger_base_visual">
+            <origin xyz="-0.0003109404188816356 0.019052538648580683 6.109696082390314e-17" rpy="3.141592653589793 -7.687995732374361e-16 1.570796326794897" />
+            <geometry>
+                <mesh filename="meshes/left_finger_base.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision name="left_finger_base_collision">
+            <origin xyz="-0.0003109404188816356 0.019052538648580683 6.109696082390314e-17" rpy="3.141592653589793 -7.687995732374361e-16 1.570796326794897" />
+            <geometry>
+                <mesh filename="meshes/left_finger_base.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_finger">
+        <inertial>
+            <origin xyz="5.070759510061862e-09 0.006999999999999031 -0.03147360506325491" rpy="-4.930380657631324e-32 -3.0200397938034858e-47 -2.1895288505075267e-47" />
+            <mass value="0.021403682367172116" />
+            <inertia ixx="1.8565514805512394e-05" iyy="1.7542107682442115e-05" izz="6.282317846938592e-06" ixy="-1.3925421107914755e-18" iyz="-7.463724374076643e-20" ixz="-9.911132515822568e-18" />
+        </inertial>
+        <visual name="left_finger_visual">
+            <origin xyz="5.070739117485346e-09 0.00 0.00" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/left_finger.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="orange" />
+        </visual>
+        <collision name="left_finger_collision">
+            <origin xyz="5.070739117485346e-09 0.007000000000000054 0.003000003634031465" rpy="3.1415926535897922 -4.718447854656919e-16 -8.326672684688368e-16" />
+            <geometry>
+                <mesh filename="meshes/left_finger.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_drive_beam">
+        <inertial>
+            <origin xyz="0.017570507368292302 -0.0011284954685520177 -9.53466557460786e-09" rpy="0.0 -0.0 0.0" />
+            <mass value="0.08868762015299468" />
+            <inertia ixx="6.723346724523695e-06" iyy="4.451668823382397e-05" izz="4.1718345766157076e-05" ixy="-3.2282420329719287e-06" iyz="9.397976552561843e-13" ixz="-1.3522874913459238e-11" />
+        </inertial>
+        <visual name="right_drive_beam_visual">
+            <origin xyz="-0.03149999583242282 -0.03500000000000059 6.269290642180181e-17" rpy="-3.141592653589793 -8.408997709427984e-17 1.5707963267948966" />
+            <geometry>
+                <mesh filename="meshes/right_drive_beam.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision name="right_drive_beam_collision">
+            <origin xyz="-0.03149999583242282 -0.03500000000000059 6.269290642180181e-17" rpy="-3.141592653589793 -8.408997709427984e-17 1.5707963267948966" />
+            <geometry>
+                <mesh filename="meshes/right_drive_beam.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_follow_beam">
+        <inertial>
+            <origin xyz="0.023795416213040852 2.0758950114441176e-14 -6.522560269672795e-17" rpy="0.0 -0.0 0.0" />
+            <mass value="0.07336934646340003" />
+            <inertia ixx="4.571144692112222e-06" iyy="3.0302030975940843e-05" izz="2.6551473727030785e-05" ixy="-1.1465437974034208e-17" iyz="-4.0721857331287376e-18" ixz="1.6744702671391274e-22" />
+        </inertial>
+        <visual name="right_follow_beam_visual">
+            <origin xyz="-0.010499995832419912 -0.007000000000000022 -6.616235337375542e-17" rpy="-3.141592653589793 -0.0 1.5707963267948963" />
+            <geometry>
+                <mesh filename="meshes/right_follow_beam.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision name="right_follow_beam_collision">
+            <origin xyz="-0.010499995832419912 -0.007000000000000022 -6.616235337375542e-17" rpy="-3.141592653589793 -0.0 1.5707963267948963" />
+            <geometry>
+                <mesh filename="meshes/right_follow_beam.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_finger_base">
+        <inertial>
+            <origin xyz="0.03355291197978449 0.004283741050062218 0.00014238687017573994" rpy="0.0 -0.0 1.0947644252537633e-47" />
+            <mass value="0.21505288373601508" />
+            <inertia ixx="6.384828951789816e-05" iyy="8.066078096590802e-05" izz="8.362186535634805e-05" ixy="2.3171129203099714e-06" iyz="1.1471139454705784e-07" ixz="1.5572914780448305e-07" />
+        </inertial>
+        <visual name="right_finger_base_visual">
+            <origin xyz="-0.00031094041888177774 0.019052538648580586 -7.2476746826311e-17" rpy="-3.141592653589793 -4.582599577517282e-16 1.5707963267948966" />
+            <geometry>
+                <mesh filename="meshes/right_finger_base.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision name="right_finger_base_collision">
+            <origin xyz="-0.00031094041888177774 0.019052538648580586 -7.2476746826311e-17" rpy="-3.141592653589793 -4.582599577517282e-16 1.5707963267948966" />
+            <geometry>
+                <mesh filename="meshes/right_finger_base.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_finger">
+        <inertial>
+            <origin xyz="-0.014695687411466478 -0.006999965369331137 -0.027832087096489176" rpy="0.0 3.785394243925012e-31 3.944304526105059e-31" />
+            <mass value="0.13441512527440586" />
+            <inertia ixx="9.977408885846739e-05" iyy="0.00011016443626286887" izz="5.6270300218510664e-05" ixy="3.6329171545982636e-11" iyz="6.880363930907407e-11" ixz="-3.185029432417749e-05" />
+        </inertial>
+        <visual name="right_finger_visual">
+            <origin xyz="0.0 -0.00 0.00" rpy="0.0 0.0 3.8895291267651153e-16" />
+            <geometry>
+                <mesh filename="meshes/right_finger.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="orange" />
+        </visual>
+        <collision name="right_finger_collision">
+            <origin xyz="0.0014007574810767443 -0.007000006776712424 0.00" rpy="0.0 0.0 3.8895291267651153e-16" />
+            <geometry>
+                <mesh filename="meshes/right_finger.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="top_nameplate">
+        <inertial>
+            <origin xyz="-0.02558872366513942 0.002889746310913961 -1.6084476470800652e-07" rpy="0.0 -4.173909801631235e-35 0.0" />
+            <mass value="0.015352404118954797" />
+            <inertia ixx="4.1702791124881393e-07" iyy="3.3001411566793346e-06" izz="2.95766933291813e-06" ixy="2.8469778678085036e-07" iyz="-1.197397469353478e-12" ixz="1.52497173718723e-11" />
+        </inertial>
+        <visual name="top_nameplate_visual">
+            <origin xyz="0.13911431204144242 0.17975474188494825 -7.085703303559864e-07" rpy="-8.077935669463161e-28 -1.4036855568399138e-12 -3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/top_nameplate.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="black" />
+        </visual>
+        <collision name="top_nameplate_collision">
+            <origin xyz="0.13911431204144242 0.17975474188494825 -7.085703303559864e-07" rpy="-8.077935669463161e-28 -1.4036855568399138e-12 -3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/top_nameplate.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="fusion_camera">
+        <inertial>
+            <origin xyz="-0.00043097517481661463 -0.00015450943178474397 -0.0002009676507678293" rpy="0.0 -0.0 0.0" />
+            <mass value="7.850000000000001e-06" />
+            <inertia ixx="1.3083333333588603e-12" iyy="1.3083333333588603e-12" izz="1.308333333325773e-12" ixy="9.926203664181097e-24" iyz="-1.3234889800848443e-23" ixz="1.3234817173758914e-23" />
+        </inertial>
+        <visual name="fusion_camera_visual">
+            <origin xyz="-2.1150148299398097e-10 -9.345972706853445e-10 -7.24900921511562e-10" rpy="-1.988219132848518 0.1309703313293014 1.8571787092076717" />
+            <geometry>
+                <mesh filename="meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="black" />
+        </visual>
+        <collision name="fusion_camera_collision">
+            <origin xyz="-2.1150148299398097e-10 -9.345972706853445e-10 -7.24900921511562e-10" rpy="-1.988219132848518 0.1309703313293014 1.8571787092076717" />
+            <geometry>
+                <mesh filename="meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="fusion_camera_frame">
+        <inertial>
+            <origin xyz="-0.00043097517481661463 -0.00015450943178474397 -0.0002009676507678293" rpy="0.0 -0.0 0.0" />
+            <mass value="7.850000000000001e-06" />
+            <inertia ixx="1.3083333333588603e-12" iyy="1.3083333333588603e-12" izz="1.308333333325773e-12" ixy="9.926203664181097e-24" iyz="-1.3234889800848443e-23" ixz="1.3234817173758914e-23" />
+        </inertial>
+        <visual name="fusion_camera_visual">
+            <origin xyz="-2.1150148299398097e-10 -9.345972706853445e-10 -7.24900921511562e-10" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="black" />
+        </visual>
+        <collision name="fusion_camera_collision">
+            <origin xyz="-2.1150148299398097e-10 -9.345972706853445e-10 -7.24900921511562e-10" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="bottom_nameplate">
+        <inertial>
+            <origin xyz="-0.025588719887418458 0.0028897450341641307 -1.6427537764353593e-07" rpy="0.0 -4.5882655207867485e-35 0.0" />
+            <mass value="0.015352404118954797" />
+            <inertia ixx="4.1702791124875125e-07" iyy="3.3001411566789822e-06" izz="2.9576693329179133e-06" ixy="2.8469778678099944e-07" iyz="-1.1973966302023134e-12" ixz="1.524970988147955e-11" />
+        </inertial>
+        <visual name="bottom_nameplate_visual">
+            <origin xyz="0.13911431581916353 0.17975474060819835 -7.120004575346363e-07" rpy="0.0 1.5456105105022227e-12 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/bottom_nameplate.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="black" />
+        </visual>
+        <collision name="bottom_nameplate_collision">
+            <origin xyz="0.13911431581916353 0.17975474060819835 -7.120004575346363e-07" rpy="0.0 1.5456105105022227e-12 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/bottom_nameplate.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="handle2shell" type="fixed">
+        <origin xyz="0.06263167 0.0 0.0070710700000000005" rpy="-1.570796326794896 1.0501257882331352e-31 -1.4060115751388838e-16" />
+        <parent link="shell" />
+        <child link="handle" />
+    </joint>
+    <joint name="cold_shoe2shell" type="fixed">
+        <origin xyz="0.014228030000000001 -4.800000000000001e-07 0.06494458" rpy="-3.141592653589792 -0.43633231299858205 3.1415926535897927" />
+        <parent link="shell" />
+        <child link="cold_shoe" />
+    </joint>
+    <joint name="phone_holder2cold_shoe" type="fixed">
+        <origin xyz="-0.012700004434082453 -5.450758659535093e-18 -0.010799999666818794" rpy="1.2329594715835546e-15 0.43633231299858205 3.141592653589793" />
+        <parent link="cold_shoe" />
+        <child link="phone_holder" />
+    </joint>
+    <joint name="phone2phone_holder" type="fixed">
+        <origin xyz="0.005283640000000003 -0.0010906700000000002 -0.047076400000000004" rpy="2.8707087257520376 -1.0408340855860844e-17 -2.775557561562892e-17" />
+        <parent link="phone_holder" />
+        <child link="phone" />
+    </joint>
+    <joint name="left_drive_beam2shell" type="continuous">
+        <origin xyz="0.12478751 0.0315 0.0002" rpy="7.468827474833593e-16 3.3920554541011573e-16 2.5334676971749863e-31" />
+        <parent link="shell" />
+        <child link="left_drive_beam" />
+        <axis xyz="-3.3920554541011573e-16 7.468827474833593e-16 1.0" />
+    </joint>
+    <joint name="left_follow_beam2shell" type="continuous">
+        <origin xyz="0.15278751 0.0105 0.0002" rpy="7.468827474833593e-16 3.3920554541011573e-16 2.5334676971749863e-31" />
+        <parent link="shell" />
+        <child link="left_follow_beam" />
+        <axis xyz="-3.3920554541011573e-16 7.468827474833593e-16 1.0" />
+    </joint>
+    <joint name="right_follow_beam2shell" type="continuous">
+        <origin xyz="0.15278751 -0.0105 0.0002" rpy="7.468827474833593e-16 3.3920554541011573e-16 2.5334676971749863e-31" />
+        <parent link="shell" />
+        <child link="right_follow_beam" />
+        <axis xyz="-3.3920554541011573e-16 7.468827474833593e-16 1.0" />
+    </joint>
+    <joint name="right_drive_beam2shell" type="continuous">
+        <origin xyz="0.12478751 -0.0315 0.0002" rpy="-3.1415926535897927 3.808389088335577e-16 1.4249848715185628e-31" />
+        <parent link="shell" />
+        <child link="right_drive_beam" />
+        <axis xyz="3.808389088335577e-16 3.7416998065744903e-16 1.0" />
+    </joint>
+    <joint name="trigger2handle" type="fixed">
+        <origin xyz="0.007071069999999997 0.0070710700000000005 -4.2870595623854275e-18" rpy="1.570796326794896 -1.4060115751388838e-16 4.930380657631324e-32" />
+        <parent link="handle" />
+        <child link="trigger" />
+    </joint>
+    <joint name="right_finger_base2right_drive_beam" type="continuous">
+        <origin xyz="0.059999999999999984 0.0 -2.2828960943854782e-17" rpy="3.1415926535897927 3.808389088335577e-16 6.531362790906148e-32" />
+        <parent link="right_drive_beam" />
+        <child link="right_finger_base" />
+        <axis xyz="2.2178215743414584e-63 -9.860761315262648e-32 0.9999999999999998" />
+    </joint>
+    <joint name="left_finger_base2left_drive_beam" type="continuous">
+        <origin xyz="0.059999999999999984 0.0 2.0365653607967716e-17" rpy="3.1415926535897927 -3.3920554541011573e-16 -7.266948220439475e-32" />
+        <parent link="left_drive_beam" />
+        <child link="left_finger_base" />
+        <axis xyz="2.3991573830317877e-63 4.930380657631325e-32 -1.0" />
+    </joint>
+    <joint name="fusion_camera2phone" type="fixed">
+        <origin xyz="0.02841229 0.052744557411752775 0.02810436199667441" rpy="-2.8707087257520376 1.1115920335894115e-18 -4.290028988796177e-17" />
+        <parent link="phone" />
+        <child link="fusion_camera" />
+    </joint>
+    <joint name="fusion_camera_frame2fusion_camera" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="-1.988219132848518 0.1309703313293014 1.8571787092076717" />
+        <parent link="fusion_camera" />
+        <child link="fusion_camera_frame" />
+    </joint>
+    <joint name="top_nameplate2shell" type="fixed">
+        <origin xyz="0.09889926000000002 -7.100000000000001e-07 0.02981974" rpy="-1.570796326789443 -7.653241734790315e-24 -3.14159265358839" />
+        <parent link="shell" />
+        <child link="top_nameplate" />
+    </joint>
+    <joint name="bottom_nameplate2shell" type="fixed">
+        <origin xyz="0.09866828999999999 3.8e-07 -0.030513690000000003" rpy="1.5707963268003444 8.422280460672448e-24 3.1415926535882472" />
+        <parent link="shell" />
+        <child link="bottom_nameplate" />
+    </joint>
+    <joint name="left_finger2left_finger_base" type="fixed">
+        <origin xyz="0.050265 0.00594 0.00" rpy="-1.5707963267948963 3.1415926 -1.3278936" />
+        <parent link="left_finger_base" />
+        <child link="left_finger" />
+    </joint>
+    <joint name="right_finger2right_finger_base" type="fixed">
+        <origin xyz="0.050265 0.00594 0.0" rpy="1.5707963267948963 3.1415926 1.8136990415982073" />
+        <parent link="right_finger_base" />
+        <child link="right_finger" />
+    </joint>
+</robot>
