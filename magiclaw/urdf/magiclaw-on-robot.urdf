@@ -18,14 +18,14 @@
         <visual name="shell_visual">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <geometry>
-                <mesh filename="meshes/shell.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/shell.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="white" />
         </visual>
         <collision name="shell_collision">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <geometry>
-                <mesh filename="meshes/shell.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/shell.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -38,14 +38,14 @@
         <visual name="flange_visual">
             <origin xyz="0.007071070229011083 0.007071070000000023 -2.2050627924188727e-17" rpy="-1.5707963267948966 8.509000628263035e-17 -3.141592653589793" />
             <geometry>
-                <mesh filename="meshes/flange.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/flange.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="white" />
         </visual>
         <collision name="flange_collision">
             <origin xyz="0.007071070229011083 0.007071070000000023 -2.2050627924188727e-17" rpy="-1.5707963267948966 8.509000628263035e-17 -3.141592653589793" />
             <geometry>
-                <mesh filename="meshes/flange.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/flange.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -58,14 +58,14 @@
         <visual name="cold_shoe_visual">
             <origin xyz="-1.8646048283166293e-09 5.628377092921376e-10 3.3163871027142024e-09" rpy="-1.5707963267948968 2.2204460492503136e-16 8.539238726449453e-17" />
             <geometry>
-                <mesh filename="meshes/cold_shoe.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/cold_shoe.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="black" />
         </visual>
         <collision name="cold_shoe_collision">
             <origin xyz="-1.8646048283166293e-09 5.628377092921376e-10 3.3163871027142024e-09" rpy="-1.5707963267948968 2.2204460492503136e-16 8.539238726449453e-17" />
             <geometry>
-                <mesh filename="meshes/cold_shoe.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/cold_shoe.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -78,14 +78,14 @@
         <visual name="phone_holder_visual">
             <origin xyz="-0.0089586470402129 -5.628377092921376e-10 -0.008590994105805222" rpy="-1.7173352050107626 0.13097033132930153 1.857178709207672" />
             <geometry>
-                <mesh filename="meshes/phone_holder.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/phone_holder.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="white" />
         </visual>
         <collision name="phone_holder_collision">
             <origin xyz="-0.0089586470402129 -5.628377092921376e-10 -0.008590994105805222" rpy="-1.7173352050107626 0.13097033132930153 1.857178709207672" />
             <geometry>
-                <mesh filename="meshes/phone_holder.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/phone_holder.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -98,14 +98,14 @@
         <visual name="phone_visual">
             <origin xyz="4.983532604363461e-09 -5.994024743216642e-10 3.960968655292163e-09" rpy="0.2672034495376104 -1.06185132029544 -0.5209576351259139" />
             <geometry>
-                <mesh filename="meshes/phone.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/phone.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="black" />
         </visual>
         <collision name="phone_collision">
             <origin xyz="4.983532604363461e-09 -5.994024743216642e-10 3.960968655292163e-09" rpy="0.2672034495376104 -1.06185132029544 -0.5209576351259139" />
             <geometry>
-                <mesh filename="meshes/phone.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/phone.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -118,14 +118,14 @@
         <visual name="left_drive_beam_visual">
             <origin xyz="-0.03149999583242275 -0.03500000000000067 -2.5465740627339528e-17" rpy="-3.141592653589793 -2.19168257540788e-17 1.5707963267948966" />
             <geometry>
-                <mesh filename="meshes/left_drive_beam.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/left_drive_beam.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="white" />
         </visual>
         <collision name="left_drive_beam_collision">
             <origin xyz="-0.03149999583242275 -0.03500000000000067 -2.5465740627339528e-17" rpy="-3.141592653589793 -2.19168257540788e-17 1.5707963267948966" />
             <geometry>
-                <mesh filename="meshes/left_drive_beam.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/left_drive_beam.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -138,14 +138,14 @@
         <visual name="left_follow_beam_visual">
             <origin xyz="-0.010499995832419895 -0.0070000000000000045 -5.082739784612045e-17" rpy="3.141592653589793 1.0642475748439586e-16 1.5707963267948966" />
             <geometry>
-                <mesh filename="meshes/left_follow_beam.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/left_follow_beam.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="white" />
         </visual>
         <collision name="left_follow_beam_collision">
             <origin xyz="-0.010499995832419895 -0.0070000000000000045 -5.082739784612045e-17" rpy="3.141592653589793 1.0642475748439586e-16 1.5707963267948966" />
             <geometry>
-                <mesh filename="meshes/left_follow_beam.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/left_follow_beam.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -158,14 +158,14 @@
         <visual name="left_finger_base_visual">
             <origin xyz="-0.0003109404188816356 0.019052538648580683 6.109696082390314e-17" rpy="3.141592653589793 -7.687995732374361e-16 1.570796326794897" />
             <geometry>
-                <mesh filename="meshes/left_finger_base.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/left_finger_base.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="white" />
         </visual>
         <collision name="left_finger_base_collision">
             <origin xyz="-0.0003109404188816356 0.019052538648580683 6.109696082390314e-17" rpy="3.141592653589793 -7.687995732374361e-16 1.570796326794897" />
             <geometry>
-                <mesh filename="meshes/left_finger_base.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/left_finger_base.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -178,14 +178,14 @@
         <visual name="left_finger_visual">
             <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00" />
             <geometry>
-                <mesh filename="meshes/left_finger.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/left_finger.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="orange" />
         </visual>
         <collision name="left_finger_collision">
             <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00" />
             <geometry>
-                <mesh filename="meshes/left_finger.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/left_finger.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -198,14 +198,14 @@
         <visual name="right_drive_beam_visual">
             <origin xyz="-0.03149999583242282 -0.03500000000000059 6.269290642180181e-17" rpy="-3.141592653589793 -8.408997709427984e-17 1.5707963267948966" />
             <geometry>
-                <mesh filename="meshes/right_drive_beam.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/right_drive_beam.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="white" />
         </visual>
         <collision name="right_drive_beam_collision">
             <origin xyz="-0.03149999583242282 -0.03500000000000059 6.269290642180181e-17" rpy="-3.141592653589793 -8.408997709427984e-17 1.5707963267948966" />
             <geometry>
-                <mesh filename="meshes/right_drive_beam.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/right_drive_beam.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -218,14 +218,14 @@
         <visual name="right_follow_beam_visual">
             <origin xyz="-0.010499995832419912 -0.007000000000000022 -6.616235337375542e-17" rpy="-3.141592653589793 -0.0 1.5707963267948963" />
             <geometry>
-                <mesh filename="meshes/right_follow_beam.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/right_follow_beam.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="white" />
         </visual>
         <collision name="right_follow_beam_collision">
             <origin xyz="-0.010499995832419912 -0.007000000000000022 -6.616235337375542e-17" rpy="-3.141592653589793 -0.0 1.5707963267948963" />
             <geometry>
-                <mesh filename="meshes/right_follow_beam.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/right_follow_beam.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -238,14 +238,14 @@
         <visual name="right_finger_base_visual">
             <origin xyz="-0.00031094041888177774 0.019052538648580586 -7.2476746826311e-17" rpy="-3.141592653589793 -4.582599577517282e-16 1.5707963267948966" />
             <geometry>
-                <mesh filename="meshes/right_finger_base.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/right_finger_base.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="white" />
         </visual>
         <collision name="right_finger_base_collision">
             <origin xyz="-0.00031094041888177774 0.019052538648580586 -7.2476746826311e-17" rpy="-3.141592653589793 -4.582599577517282e-16 1.5707963267948966" />
             <geometry>
-                <mesh filename="meshes/right_finger_base.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/right_finger_base.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -258,14 +258,14 @@
         <visual name="right_finger_visual">
             <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00" />
             <geometry>
-                <mesh filename="meshes/right_finger.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/right_finger.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="orange" />
         </visual>
         <collision name="right_finger_collision">
             <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00" />
             <geometry>
-                <mesh filename="meshes/right_finger.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/right_finger.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -278,14 +278,14 @@
         <visual name="top_nameplate_visual">
             <origin xyz="0.13911431204144242 0.17975474188494825 -7.085703303559864e-07" rpy="-8.077935669463161e-28 -1.4036855568399138e-12 -3.141592653589793" />
             <geometry>
-                <mesh filename="meshes/top_nameplate.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/top_nameplate.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="black" />
         </visual>
         <collision name="top_nameplate_collision">
             <origin xyz="0.13911431204144242 0.17975474188494825 -7.085703303559864e-07" rpy="-8.077935669463161e-28 -1.4036855568399138e-12 -3.141592653589793" />
             <geometry>
-                <mesh filename="meshes/top_nameplate.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/top_nameplate.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -298,14 +298,14 @@
         <visual name="fusion_camera_visual">
             <origin xyz="-2.1150148299398097e-10 -9.345972706853445e-10 -7.24900921511562e-10" rpy="-1.988219132848518 0.1309703313293014 1.8571787092076717" />
             <geometry>
-                <mesh filename="meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="black" />
         </visual>
         <collision name="fusion_camera_collision">
             <origin xyz="-2.1150148299398097e-10 -9.345972706853445e-10 -7.24900921511562e-10" rpy="-1.988219132848518 0.1309703313293014 1.8571787092076717" />
             <geometry>
-                <mesh filename="meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -318,14 +318,14 @@
         <visual name="fusion_camera_visual">
             <origin xyz="-2.1150148299398097e-10 -9.345972706853445e-10 -7.24900921511562e-10" rpy="0.0 0.0 0.0" />
             <geometry>
-                <mesh filename="meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="black" />
         </visual>
         <collision name="fusion_camera_collision">
             <origin xyz="-2.1150148299398097e-10 -9.345972706853445e-10 -7.24900921511562e-10" rpy="0.0 0.0 0.0" />
             <geometry>
-                <mesh filename="meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -338,14 +338,14 @@
         <visual name="bottom_nameplate_visual">
             <origin xyz="0.13911431581916353 0.17975474060819835 -7.120004575346363e-07" rpy="0.0 1.5456105105022227e-12 3.141592653589793" />
             <geometry>
-                <mesh filename="meshes/bottom_nameplate.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/bottom_nameplate.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="black" />
         </visual>
         <collision name="bottom_nameplate_collision">
             <origin xyz="0.13911431581916353 0.17975474060819835 -7.120004575346363e-07" rpy="0.0 1.5456105105022227e-12 3.141592653589793" />
             <geometry>
-                <mesh filename="meshes/bottom_nameplate.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="../meshes/bottom_nameplate.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
