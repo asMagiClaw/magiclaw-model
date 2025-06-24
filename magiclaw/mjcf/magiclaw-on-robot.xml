@@ -9,96 +9,138 @@
         <mesh name="left_drive_beam" file="../meshes/left_drive_beam.stl" scale="0.001 0.001 0.001" />
         <mesh name="left_follow_beam" file="../meshes/left_follow_beam.stl" scale="0.001 0.001 0.001" />
         <mesh name="left_finger_base" file="../meshes/left_finger_base.stl" scale="0.001 0.001 0.001" />
-        <mesh name="left_finger" file="../meshes/left_finger.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left_finger" file="../meshes/left_finger_surf.stl" scale="0.001 0.001 0.001" />
         <mesh name="right_drive_beam" file="../meshes/right_drive_beam.stl" scale="0.001 0.001 0.001" />
         <mesh name="right_follow_beam" file="../meshes/right_follow_beam.stl" scale="0.001 0.001 0.001" />
         <mesh name="right_finger_base" file="../meshes/right_finger_base.stl" scale="0.001 0.001 0.001" />
-        <mesh name="right_finger" file="../meshes/right_finger.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right_finger" file="../meshes/right_finger_surf.stl" scale="0.001 0.001 0.001" />
         <mesh name="top_nameplate" file="../meshes/top_nameplate.stl" scale="0.001 0.001 0.001" />
         <mesh name="fusion_camera" file="../meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
         <mesh name="bottom_nameplate" file="../meshes/bottom_nameplate.stl" scale="0.001 0.001 0.001" />
+
+        <material name="black" rgba="0.1 0.1 0.1 1" shininess="0.5"/>
+        <material name="white" rgba="1 1 1 1" shininess="0.2"/>
+        <material name="orange" rgba="1 0.2 0 1" shininess="0.2"/>
     </asset>
     <worldbody>
-        <light directional="true" pos="-0.5 0.5 3" dir="0 0 -1" />
-        <body name="shell" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
-            <geom name="shell_geom" type="mesh" mesh="shell" pos="0 0 0" euler="0 0 0" />
-            <inertial mass="1.1547124958310249" pos="0.09215419082197362 -3.0360999473407925e-08 0.003155929862125859" fullinertia="0.0011731060061113516 0.002535696012427195 0.0021289998515155277 8.443177599909338e-09 0.00031236232114537456 -1.5227905621184584e-08" />
-            <body name="flange" pos="0.06970274022901109 -1.7763568394002505e-17 -2.2142712203524214e-17" euler="-7.468827474833593e-16 -3.3920554541011573e-16 3.141592653589793">
-                <geom name="flange_geom" type="mesh" mesh="flange" pos="0 0 0" euler="0 0 0" />
-                <inertial mass="0.6742904364749333" pos="0.0481518959054617 5.3337825640340375e-06 -9.62947777665392e-05" fullinertia="0.0006127656170968758 0.0005504985892562746 0.0006837258090508262 4.4581084356830226e-08 -1.2864441078605858e-06 -4.2151581519993964e-09" />
+        <body name="shell" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0">
+            <site name="ft_frame" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 0 0 1" type="sphere" group="1" />
+            <!-- This site was added for visualization. -->
+            <body name="eef" pos="0 0 0.28" euler="0.0 0.0 0.0">
+                <site name="grip_site" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 0 0 0.5" type="sphere" group="1"/>
+                <site name="ee_x" pos="0.1 0 0" size="0.005 .1"  quat="0.707105  0 0.707108 0 " rgba="1 0 0 0" type="cylinder" group="1"/>
+                <site name="ee_y" pos="0 0.1 0" size="0.005 .1" quat="0.707105 0.707108 0 0" rgba="0 1 0 0" type="cylinder" group="1"/>
+                <site name="ee_z" pos="0 0 0.1" size="0.005 .1" quat="1 0 0 0" rgba="0 0 1 0" type="cylinder" group="1"/>
+                <!-- This site was added for visualization. -->
+                <site name="grip_site_cylinder" pos="0 0 0" size="0.005 10" rgba="0 1 0 0.3" type="cylinder" group="1"/>
             </body>
-            <body name="cold_shoe" pos="0.014228030288340117 -4.794371622907079e-07 0.0649445762063165" euler="1.570796326794898 -0.43633231299858233 3.1415926535897927">
-                <geom name="cold_shoe_geom" type="mesh" mesh="cold_shoe" pos="0 0 0" euler="0 0 0" />
-                <inertial mass="0.06809085000208817" pos="-0.0004682285408064077 0.006272933645659601 8.191619210524988e-18" fullinertia="4.601940388134735e-06 9.214205368077137e-06 6.473933916345846e-06 1.938227327744285e-07 1.6471966369020328e-20 3.498723544983655e-21" />
-                <body name="phone_holder" pos="-0.0009499999999998443 0.01479999999999989 -1.4100523591624447e-17" euler="0.2708839278377749 1.2566370614359172 1.7963785889362146e-16">
-                    <geom name="phone_holder_geom" type="mesh" mesh="phone_holder" pos="0 0 0" euler="0 0 0" />
-                    <inertial mass="0.05440462887363338" pos="0.0006243933844416452 0.038638829025844965 -0.010505279263032874" fullinertia="3.778450593016228e-05 2.133704709883822e-05 5.212901213071338e-05 -1.2504612975426464e-07 -3.413793999174385e-07 9.252069012498977e-06" />
-                    <body name="phone" pos="-5.230815780521425e-15 0.040351728941137796 -0.007543022429482527" euler="1.0802247528272196e-16 0.270883927837755 1.5707963267948963">
-                        <geom name="phone_geom" type="mesh" mesh="phone" pos="0 0 0" euler="0 0 0" />
-                        <inertial mass="0.5883914302022325" pos="0.00019571061796769653 0.0007302222847212891 0.0035262713385931037" fullinertia="0.0010493295288383684 0.00025022135000802285 0.0012943914287563507 -6.1008322796555256e-06 4.7327231065278025e-07 1.3768260114195368e-06" />
-                        <body name="fusion_camera" pos="0.023758707046508898 0.06175000190734866 -0.001250000000000031" euler="-5.5511151231257815e-17 6.938893903907227e-18 -1.5707963267948966">
-                            <geom name="fusion_camera_geom" type="mesh" mesh="fusion_camera" pos="0 0 0" euler="0 0 0" />
-                            <inertial mass="7.850000000000001e-06" pos="2.5106056556617462e-18 3.144186300207963e-18 0.0005000000000000059" fullinertia="1.3083333333572649e-12 1.3083333333215442e-12 1.308333333364686e-12 1.4109982669340974e-23 -1.5103341564744239e-24 -8.964993980166084e-24" />
+            <geom name="shell_geom" type="mesh" mesh="shell" material="white" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+            <geom name="shell_col" type="mesh" mesh="shell" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+            <inertial mass="1.1547124958310255" pos="-3.036099948925442e-08 0.0031559298621258746 0.09215419082197411" fullinertia="0.002535696012427224 0.0021289998515154956 0.0011731060061113323 -1.5227905624726843e-08 8.44317760337745e-09 0.00031236232114537906" />
+            <body name="flange" pos="1.1222063577801364e-17 5.8913543780757585e-18 0.06970274022901138" euler="-1.5707963267948974 1.5707963267948961 0">
+                <geom name="flange_geom" type="mesh" mesh="flange" material="white" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                <geom name="flange_col" type="mesh" mesh="flange" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                <inertial mass="0.6742904364749333" pos="0.0481518959054617 5.333782564034037e-06 -9.629477776653918e-05" fullinertia="0.0006127656170968757 0.0005504985892562752 0.0006837258090508266 4.458108435683025e-08 -1.2864441078605856e-06 -4.2151581519993964e-09" />
+            </body>
+            <body name="cold_shoe" pos="-4.794371623618879e-07 0.06494457620631652 0.014228030288339856" euler="1.5707963267948983 1.1344640137963138 1.5707963267948968">
+                <geom name="cold_shoe_geom" type="mesh" mesh="cold_shoe" material="black" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                <geom name="cold_shoe_col" type="mesh" mesh="cold_shoe" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                <inertial mass="0.06809085000208817" pos="-0.0004682285408064077 0.006272933645659613 7.222751213130775e-18" fullinertia="4.60194038813475e-06 9.214205368077162e-06 6.473933916345851e-06 1.9382273277443718e-07 1.5621191425825622e-20 5.6576330405289305e-22" />
+                <body name="phone_holder" pos="-0.0009499999999996445 0.014800000000000032 -4.755168426986284e-17" euler="0.2708839278377733 1.2566370614359168 -2.5149300245106996e-15">
+                    <geom name="phone_holder_geom" type="mesh" mesh="phone_holder" material="white" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                    <geom name="phone_holder_col" type="mesh" mesh="phone_holder" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                    <inertial mass="0.05440462887363338" pos="0.000624393384441646 0.0386388290258451 -0.010505279263032904" fullinertia="3.7784505930161666e-05 2.1337047098838338e-05 5.212901213071364e-05 -1.2504612975416596e-07 -3.413793999171691e-07 9.25206901249912e-06" />
+                    <body name="phone" pos="-5.341838082983941e-15 0.04035172894113757 -0.007543022429482603" euler="5.761198681745167e-16 0.270883927837755 1.570796326794897">
+                        <geom name="phone_geom" type="mesh" mesh="phone" material="black" pos="0 0 0"  euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                        <geom name="phone_col" type="mesh" mesh="phone" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                        <inertial mass="0.5883914302022325" pos="0.0001957106179676924 0.0007302222847212853 0.003526271338593117" fullinertia="0.0010493295288383742 0.00025022135000802394 0.0012943914287563642 -6.100832279654794e-06 4.7327231065120816e-07 1.3768260114171787e-06" />
+                        <body name="fusion_camera" pos="0.02375870704650911 0.06175000190734865 -0.0012499999999999734" euler="3.885780586188047e-16 -0.0 -1.5707963267948968">
+                            <geom name="fusion_camera_geom" type="mesh" material="black" mesh="fusion_camera" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                            <inertial mass="7.850000000000001e-06" pos="2.0328790734103208e-19 -1.0842021724855044e-19 0.0005000000000000009" fullinertia="1.3083333333279226e-12 1.308333333354112e-12 1.3083333333085307e-12 4.183108499333564e-24 -1.0751732376055467e-23 8.351171843482752e-24" />
                         </body>
                     </body>
                 </body>
             </body>
-            <body name="left_drive_beam" pos="0.09328751416757726 -0.0035000000000006714 0.0001999999999999591" euler="-3.1415926535897927 -7.68799573237438e-16 1.5707963267948966">
-                <joint name="left_drive_beam2shell" type="hinge" axis="7.687995732374377e-16 -3.5188341897808857e-16 -1.0" pos="0.03500000000000066 0.03150048583242273 -2.5078040547888564e-17" />
-                <geom name="left_drive_beam_geom" type="mesh" mesh="left_drive_beam" pos="0 0 0" euler="0 0 0" />
-                <inertial mass="0.0886876201001314" pos="0.033871504520529824 0.04907050317929067 -1.1138369973577824e-08" fullinertia="4.451668816510309e-05 6.723346716196287e-06 4.1718345694979854e-05 -3.228241993904977e-06 7.584848964003694e-13 -1.6462224337643437e-11" />
-                <body name="left_finger_base" pos="0.015947461351419986 0.09118905541354112 4.163336342344337e-19" euler="-3.141592653589793 2.070759876205155e-30 -3.141592653589793">
-                    <joint name="left_finger_base2left_drive_beam" type="hinge" axis="-7.687995732374359e-16 -2.999214831565078e-16 1.0000000000000002" pos="-0.01905253864858069 0.0003114304188816475 4.654061351057062e-17" />
-                    <geom name="left_finger_base_geom" type="mesh" mesh="left_finger_base" pos="0 0 0" euler="0 0 0" />
-                    <inertial mass="0.21505299028592448" pos="-0.01476879182434422 0.03386384931816468 0.0001423892791908736" fullinertia="8.066081605719554e-05 6.384830054305602e-05 8.362190041833614e-05 2.317114021451734e-06 1.1471065987766742e-07 1.5573140016734295e-07" />
-                    <body name="left_finger" pos="-0.013112878015285696 0.050575573969618336 1.1744077932362985e-16" euler="-1.5707963267948968 1.5857410828773072e-16 -0.24290271480331072">
-                        <geom name="left_finger_geom" type="mesh" mesh="left_finger" pos="0 0 0" euler="0 0 0" />
-                        <inertial mass="0.021403682367172116" pos="2.0391674460107367e-14 9.94003423654015e-16 0.0344736086972864" fullinertia="1.8565514805512384e-05 1.754210768244212e-05 6.282317846938596e-06 1.3912861520321421e-18 9.915367680558841e-18 -6.417075936887437e-20" />
+            <body name="left_drive_beam" pos="-0.0035000000000004793 0.00020000000000000817 0.09328751416757722" euler="1.5707963267948966 -9.860761315262672e-32 4.2769362789406708e-16">
+                <joint name="left_drive_beam2shell" type="hinge" axis="5.664715059722104e-16 -1.0895721024521484e-11 -1.000000000000001" pos="0.03500000000000043 0.03150048583242055 -1.359619113248183e-12" />
+                <geom name="left_drive_beam_geom" type="mesh" mesh="left_drive_beam" material="white" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                <geom name="left_drive_beam_col" type="mesh" mesh="left_drive_beam" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                <inertial mass="0.0886876201001314" pos="0.033871504520529845 0.04907050317929092 -1.113836997697422e-08" fullinertia="4.4516688165101366e-05 6.723346716196792e-06 4.1718345694979515e-05 -3.2282419939048574e-06 7.584848236236384e-13 -1.6462224316955366e-11" />
+                <body name="left_finger_base" pos="0.015947461351420104 0.09118905541354089 5.485195631038664e-17" euler="-3.141592653589793 8.326672683512744e-17 3.1415926535897927">
+                    <joint name="left_finger_base2left_drive_beam" type="hinge" axis="-4.832047791431577e-16 -1.0895637757794639e-11 1.0000000000000016" pos="-0.019052538648580298 0.00031143041887939885 2.0134163951154363e-12" />
+                    <geom name="left_finger_base_geom" type="mesh" mesh="left_finger_base" material="white" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                    <geom name="left_finger_base_col" type="mesh" mesh="left_finger_base" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                    <inertial mass="0.21505299028592448" pos="-0.014768791824344223 0.03386384931816486 0.0001423892791908766" fullinertia="8.066081605719204e-05 6.384830054305667e-05 8.362190041833457e-05 2.317114021451753e-06 1.1471065987761728e-07 1.5573140016735545e-07" />
+                    <body name="left_finger" pos="-0.013112878015286043 0.05057557396961812 1.7916224059888464e-16" euler="-1.5707963267948968 5.998577140163191e-17 -0.24290271480330905">
+                        <geom name="left_finger_geom" type="mesh" mesh="left_finger" material="orange" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                        <geom name="left_finger_col" type="mesh" mesh="left_finger" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                        <inertial mass="0.021403682367172116" pos="2.0367388331443692e-14 9.905313116637626e-16 0.03447360869728646" fullinertia="1.8565514805512716e-05 1.754210768244305e-05 6.282317846938685e-06 1.3917304942654525e-18 1.004157558969973e-17 -6.910411673431812e-20" />
                     </body>
                 </body>
             </body>
-            <body name="left_follow_beam" pos="0.1422875141675801 0.0034999999999999966 0.0001999999999999475" euler="-3.141592653589793 -6.404579899989633e-16 1.5707963267948966">
-                <joint name="left_follow_beam2shell" type="hinge" axis="6.404579899989632e-16 -2.776437282460376e-16 -1.0" pos="0.0070000000000000045 0.010500485832419913 -5.093467830752557e-17" />
-                <geom name="left_follow_beam_geom" type="mesh" mesh="left_follow_beam" pos="0 0 0" euler="0 0 0" />
-                <inertial mass="0.07336934646340006" pos="0.00700000000002078 0.034295412045460744 -7.606090876475409e-18" fullinertia="3.0302030975941263e-05 4.57114469211224e-06 2.6551473727030785e-05 -1.1493463880457552e-17 -4.073573407389879e-18 -1.3802573759153775e-20" />
+            <body name="left_follow_beam" pos="0.003500000000000062 0.00020000000000000548 0.14228751416757998" euler="1.5707963267948963 -1.9721522630525343e-31 4.2769362789406708e-16">
+                <joint name="left_follow_beam2shell" type="hinge" axis="5.664715059722104e-16 -1.0895721024521483e-11 -1.0000000000000013" pos="0.006999999999999864 0.010500485832417665 -1.664712834594592e-12" />
+                <geom name="left_follow_beam_geom" type="mesh" mesh="left_follow_beam" material="white" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                <geom name="left_follow_beam_col" type="mesh" mesh="left_follow_beam" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                <inertial mass="0.07336934646340006" pos="0.007000000000020792 0.034295412045460896 -7.718631353717169e-19" fullinertia="3.030203097594083e-05 4.571144692112283e-06 2.655147372703172e-05 -1.1498105133523387e-17 -4.079691745147602e-18 1.1706608050757752e-20" />
             </body>
-            <body name="right_follow_beam" pos="0.1422875141675801 -0.017500000000000022 0.0001999999999999322" euler="-3.1415926535897927 -7.468827474833592e-16 1.5707963267948963">
-                <joint name="right_follow_beam2shell" type="hinge" axis="7.468827474833592e-16 -3.6700121688494564e-16 -1.0000000000000002" pos="0.007000000000000024 0.010500485832419915 -6.644235773496602e-17" />
-                <geom name="right_follow_beam_geom" type="mesh" mesh="right_follow_beam" pos="0 0 0" euler="0 0 0" />
-                <inertial mass="0.07336934646340003" pos="0.007000000000020789 0.034295412045460764 -1.911247007288513e-18" fullinertia="3.0302030975940843e-05 4.571144692112222e-06 2.65514737270308e-05 -1.1466252287897632e-17 4.072185733128739e-18 4.435109780490989e-22" />
+            <body name="right_follow_beam" pos="-0.017499999999999936 0.00019999999999998776 0.14228751416758004" euler="1.5707963267948966 -1.4791141972894004e-31 4.2769362789406693e-16">
+                <joint name="right_follow_beam2shell" type="hinge" axis="5.664715059722104e-16 -1.0895721024521487e-11 -1.0000000000000022" pos="0.006999999999999907 0.010500485832417611 -1.6647371045883272e-12" />
+                <geom name="right_follow_beam_geom" type="mesh" mesh="right_follow_beam" material="white" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                <geom name="right_follow_beam_col" type="mesh" mesh="right_follow_beam" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                <inertial mass="0.07336934646340003" pos="0.0070000000000207795 0.03429541204546092 -4.964520868613915e-18" fullinertia="3.030203097594041e-05 4.571144692112293e-06 2.6551473727031334e-05 -1.1513664564207964e-17 4.047748654513075e-18 -5.5923280973333494e-21" />
             </body>
-            <body name="right_drive_beam" pos="0.09328751416757719 0.0035000000000005916 0.00019999999999996244" euler="-3.3219673273116006e-16 4.5825995775172895e-16 -1.5707963267948966">
-                <joint name="right_drive_beam2shell" type="hinge" axis="4.58259957751729e-16 3.321967327311601e-16 -1.0000000000000002" pos="0.03500000000000061 0.031500485832422806 6.407106227090859e-17" />
-                <geom name="right_drive_beam_geom" type="mesh" mesh="right_drive_beam" pos="0 0 0" euler="0 0 0" />
-                <inertial mass="0.08868762015299468" pos="0.03387150453144859 0.049070503200715127 9.534665637759981e-09" fullinertia="4.451668823382398e-05 6.723346724523695e-06 4.171834576615709e-05 -3.2282420329719282e-06 -9.397976548638411e-13 1.3522874914890011e-11" />
-                <body name="right_finger_base" pos="0.01594746135142 0.09118905541354103 2.7755575615628915e-18" euler="3.141592653589793 8.874685183736383e-31 3.141592653589793">
-                    <joint name="right_finger_base2right_drive_beam" type="hinge" axis="4.582599577517281e-16 -2.6135038419890275e-16 -1.0000000000000004" pos="-0.01905253864858059 0.00031143041888179103 -8.126421819213156e-17" />
-                    <geom name="right_finger_base_geom" type="mesh" mesh="right_finger_base" pos="0 0 0" euler="0 0 0" />
-                    <inertial mass="0.21505288373601508" pos="-0.014768797598518374 0.03386385239866627 -0.00014238687017582806" fullinertia="8.066078096590805e-05 6.384828951789821e-05 8.362186535634816e-05 2.3171129203099837e-06 -1.1471139454705992e-07 -1.5572914780447696e-07" />
-                    <body name="right_finger" pos="-0.013112876976025428 0.050575578034017785 6.776712331672819e-09" euler="1.5707974266846267 -3.8435449719296104e-16 2.898689938382873">
-                        <geom name="right_finger_geom" type="mesh" mesh="right_finger" pos="0 0 0" euler="0 0 0" />
-                        <inertial mass="0.13441512527440586" pos="4.507130953175978e-11 -3.490209281130484e-09 0.03447361220656389" fullinertia="0.00011659143299408017 0.00011016443626295465 3.9452956082812435e-05 -9.04960949561751e-18 -3.1199194829143395e-14 3.101400013090393e-14" />
+            <body name="right_drive_beam" pos="0.003500000000000697 0.00019999999999997965 0.0932875141675772" euler="1.5707963267948968 -1.224646799147357e-16 -3.141592653589793">
+                <joint name="right_drive_beam2shell" type="hinge" axis="1.9375873914463422e-16 1.0895762657884914e-11 -1.000000000000002" pos="0.03500000000000077 0.031500485832420565 1.3596635455904788e-12" />
+                <geom name="right_drive_beam_geom" type="mesh" mesh="right_drive_beam" material="white" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                <geom name="right_drive_beam_col" type="mesh" mesh="right_drive_beam" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                <inertial mass="0.08868762015299468" pos="0.03387150453144859 0.04907050320071537 9.534665629711472e-09" fullinertia="4.45166882338229e-05 6.723346724524215e-06 4.1718345766157455e-05 -3.2282420329720472e-06 -9.39797693539715e-13 1.3522874879778942e-11" />
+                <body name="right_finger_base" pos="0.015947461351419914 0.09118905541354093 -2.0435042547006786e-17" euler="3.141592653589793 -5.3027099789392925e-27 -3.1415926535897927">
+                    <joint name="right_finger_base2right_drive_beam" type="hinge" axis="1.9375873915495336e-16 -1.0895554491067799e-11 -1.000000000000002" pos="-0.01905253864858084 0.000311430418879276 -2.013434379970843e-12" />
+                    <geom name="right_finger_base_geom" type="mesh" mesh="right_finger_base" material="white" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                    <geom name="right_finger_base_col" type="mesh" mesh="right_finger_base" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                    <inertial mass="0.21505288373601508" pos="-0.014768797598518372 0.03386385239866641 -0.00014238687017583093" fullinertia="8.066078096590284e-05 6.384828951789886e-05 8.362186535634832e-05 2.3171129203098413e-06 -1.1471139454710393e-07 -1.5572914780452508e-07" />
+                    <body name="right_finger" pos="-0.013112876976025074 0.050575578034017854 6.776712400645424e-09" euler="1.5707974266846267 -3.716203311660934e-16 2.8986899383828715">
+                        <geom name="right_finger_geom" type="mesh" mesh="right_finger" material="orange" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                        <geom name="right_finger_col" type="mesh" mesh="right_finger" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                        <inertial mass="0.13441512527440586" pos="4.507131994013758e-11 -3.490209283359749e-09 0.034473612206563954" fullinertia="0.00011659143299408043 0.00011016443626296011 3.945295608281265e-05 -9.008281834423496e-18 -3.119908303060581e-14 3.10139830348772e-14" />
                     </body>
                 </body>
             </body>
-            <body name="top_nameplate" pos="-0.04021505204144243 -1.430845204750933e-09 -0.14993500188494824" euler="1.570796326789443 -1.2246467991688608e-16 -3.943542306643651e-16">
-                <geom name="top_nameplate_geom" type="mesh" mesh="top_nameplate" pos="0 0 0" euler="0 0 0" />
-                <inertial mass="0.015352404118954797" pos="0.16470303570658185 0.17686499557403426 5.477253344567074e-07" fullinertia="4.1702791124881393e-07 3.3001411566793346e-06 2.95766933291813e-06 2.846977867808507e-07 -1.5249713805610626e-11 1.1973970697273085e-12" />
+            <body name="top_nameplate" pos="-1.4310418942556832e-09 -0.15033685236712863 -0.039694250929835195" euler="-1.570796326309887 -1.5679022765616433 1.5707963263046463">
+                <geom name="top_nameplate_geom" type="mesh" mesh="top_nameplate" material="black" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                <geom name="top_nameplate_col" type="mesh" mesh="top_nameplate" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                <inertial mass="0.015352404118954797" pos="0.16470303570658315 0.1768649955740351 5.477253344658656e-07" fullinertia="4.170279112493595e-07 3.300141156677546e-06 2.957669332912765e-06 2.846977867813645e-07 -1.5249713393507345e-11 1.197396731513109e-12" />
             </body>
-            <body name="bottom_nameplate" pos="-0.040446025819163525 1.0873460992387375e-06 -0.21026843847429663" euler="1.570796326789449 1.22464679912587e-16 -3.943542306655768e-16">
-                <geom name="bottom_nameplate_geom" type="mesh" mesh="bottom_nameplate" pos="0 0 0" euler="0 0 0" />
-                <inertial mass="0.015352404118954797" pos="0.1647030357065819 0.17686499557403426 5.477253344578433e-07" fullinertia="4.170279112488256e-07 3.300141156678901e-06 2.9576693329177507e-06 2.846977867809787e-07 -1.5249713808317555e-11 1.1973970702360726e-12" />
+            <body name="bottom_nameplate" pos="-3.31999476792859e-07 0.14963038215091964 -0.039941496455822775" euler="-1.5707963262436224 -1.5679925997253823 -1.570796327351661">
+                <geom name="bottom_nameplate_geom" type="mesh" mesh="bottom_nameplate" material="black" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
+                <geom name="bottom_nameplate_col" type="mesh" mesh="bottom_nameplate" pos="0 0 0" euler="0 0 0" mass="0.005"/>
+                <inertial mass="0.015352404118954797" pos="0.1647030357065824 0.17686499557403482 5.477253344255977e-07" fullinertia="4.170279112486099e-07 3.300141156678986e-06 2.9576693329150944e-06 2.8469778678098356e-07 -1.524971378339185e-11 1.1973968822779906e-12" />
             </body>
         </body>
     </worldbody>
     <actuator>
-        <position name="left_drive_beam2shell" joint="left_drive_beam2shell" ctrlrange="-3.14 3.14" ctrllimited="true" kp="1000" forcelimited="true" forcerange="-20 20" />
-        <position name="left_finger_base2left_drive_beam" joint="left_finger_base2left_drive_beam" ctrlrange="-3.14 3.14" ctrllimited="true" kp="1000" forcelimited="true" forcerange="-20 20" />
-        <position name="left_follow_beam2shell" joint="left_follow_beam2shell" ctrlrange="-3.14 3.14" ctrllimited="true" kp="1000" forcelimited="true" forcerange="-20 20" />
-        <position name="right_drive_beam2shell" joint="right_drive_beam2shell" ctrlrange="-3.14 3.14" ctrllimited="true" kp="1000" forcelimited="true" forcerange="-20 20" />
-        <position name="right_finger_base2right_drive_beam" joint="right_finger_base2right_drive_beam" ctrlrange="-3.14 3.14" ctrllimited="true" kp="1000" forcelimited="true" forcerange="-20 20" />
-        <position name="right_follow_beam2shell" joint="right_follow_beam2shell" ctrlrange="-3.14 3.14" ctrllimited="true" kp="1000" forcelimited="true" forcerange="-20 20" />
+        <position name="claw_beam" joint="left_drive_beam2shell" ctrlrange="-0.02 1.1" ctrllimited="true" kp="100" />
     </actuator>
+    <equality>
+        <joint name="drive_beams" joint1="left_drive_beam2shell" joint2="right_drive_beam2shell" polycoef="0 1 0 0 0" />
+        <joint name="left_beams" joint1="left_drive_beam2shell" joint2="left_follow_beam2shell" polycoef="0 1 0 0 0" />
+        <joint name="right_beams" joint1="right_drive_beam2shell" joint2="right_follow_beam2shell" polycoef="0 -1 0 0 0" />
+        <joint name="left_finger" joint1="left_finger_base2left_drive_beam" joint2="left_drive_beam2shell" polycoef="0 -1 0 0 0" />
+        <joint name="right_finger" joint1="right_finger_base2right_drive_beam" joint2="right_drive_beam2shell" polycoef="0 1 0 0 0" />
+    </equality>
+    <contact>
+        <exclude body1="left_follow_beam" body2="left_finger_base"/>
+        <exclude body1="right_follow_beam" body2="right_finger_base"/>
+        <exclude body1="left_follow_beam" body2="shell"/>
+        <exclude body1="right_follow_beam" body2="shell"/>
+        <exclude body1="left_drive_beam" body2="left_finger_base"/>
+        <exclude body1="right_drive_beam" body2="right_finger_base"/>
+        <exclude body1="left_drive_beam" body2="shell"/>
+        <exclude body1="right_drive_beam" body2="shell"/>
+        <exclude body1="left_finger_base" body2="left_finger"/>
+        <exclude body1="right_finger_base" body2="right_finger"/>
+    </contact>
     <sensor>
         <force name="force_ee" site="ft_frame"/>
         <torque name="torque_ee" site="ft_frame"/>
