@@ -149,21 +149,21 @@
             </geometry>
         </collision>
     </link>
-    <link name="left_finger_base">
+        <link name="left_finger_base">
         <inertial>
             <origin xyz="-0.0042837468242360455 -0.00014238927681188465 -0.033552908899287" rpy="0.0 -0.0 0.0" />
             <mass value="0.21505299028592448" />
             <inertia ixx="8.06608160571921e-05" iyy="8.362190041833053e-05" izz="6.384830054305968e-05" ixy="1.1471065985239519e-07" iyz="1.557314003827936e-07" ixz="2.317114021453014e-06" />
         </inertial>
         <visual name="left_finger_base_visual">
-            <origin xyz="-0.019052538648580294 2.010030267229901e-12 0.00031094041887936186" rpy="-1.5707963268057923 9.044916178169453e-16 3.1415926535897927" />
+            <origin xyz="-0.019052538648580294 2.010030267229901e-12 0.00031094041887936186" rpy="0.0 9.044916178169453e-16 3.1415926535897927" />
             <geometry>
                 <mesh filename="../meshes/left_finger_base.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="white" />
         </visual>
         <collision name="left_finger_base_collision">
-            <origin xyz="-0.019052538648580294 2.010030267229901e-12 0.00031094041887936186" rpy="-1.5707963268057923 9.044916178169453e-16 3.1415926535897927" />
+            <origin xyz="-0.019052538648580294 2.010030267229901e-12 0.00031094041887936186" rpy="0.0 9.044916178169453e-16 3.1415926535897927" />
             <geometry>
                 <mesh filename="../meshes/left_finger_base.stl" scale="0.001 0.001 0.001" />
             </geometry>
@@ -216,14 +216,14 @@
             <inertia ixx="8.066078096590279e-05" iyy="8.36218653563442e-05" izz="6.384828951790173e-05" ixy="1.1471139452181839e-07" iyz="1.5572914801996807e-07" ixz="2.3171129203110695e-06" />
         </inertial>
         <visual name="right_finger_base_visual">
-            <origin xyz="0.019052538648580843 -2.010039287791976e-12 -0.0003109404188792908" rpy="1.5707963268057923 9.298117830909563e-16 1.9375873915495425e-16" />
+            <origin xyz="0.019052538648580843 -2.010039287791976e-12 -0.0003109404188792908" rpy="0.0 9.298117830909563e-16 1.9375873915495425e-16" />
             <geometry>
                 <mesh filename="../meshes/right_finger_base.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="white" />
         </visual>
         <collision name="right_finger_base_collision">
-            <origin xyz="0.019052538648580843 -2.010039287791976e-12 -0.0003109404188792908" rpy="1.5707963268057923 9.298117830909563e-16 1.9375873915495425e-16" />
+            <origin xyz="0.019052538648580843 -2.010039287791976e-12 -0.0003109404188792908" rpy="0.0 9.298117830909563e-16 1.9375873915495425e-16" />
             <geometry>
                 <mesh filename="../meshes/right_finger_base.stl" scale="0.001 0.001 0.001" />
             </geometry>
@@ -389,16 +389,16 @@
         <axis xyz="-5.382680239935863e-16 -7.739149810139875e-18 0.9999999999999998" />
     </joint>
     <joint name="right_finger_base2right_drive_beam" type="continuous">
-        <origin xyz="8.881784197001253e-18 0.060000000000000074 4.510281037539699e-19" rpy="-1.5707963267948968 -5.382680239935868e-16 -1.8009393804046963e-31" />
+        <origin xyz="8.881784197001253e-18 0.060000000000000074 4.510281037539699e-19" rpy="0.0 -5.382680239935868e-16 -1.8009393804046963e-31" />
         <parent link="right_drive_beam" />
         <child link="right_finger_base" />
-        <axis xyz="-3.944304526105059e-31 0.9999999999999976 9.714451465631678e-17" />
+        <axis xyz="-3.944304526105059e-31 0.0 1.0" />
     </joint>
     <joint name="left_finger_base2left_drive_beam" type="continuous">
-        <origin xyz="8.881784197001253e-18 -0.060000000000000074 -2.949029909160572e-18" rpy="-1.5707963267948966 9.10980790819496e-16 2.8517360085299336e-31" />
+        <origin xyz="8.881784197001253e-18 -0.060000000000000074 -2.949029909160572e-18" rpy="0.0 9.10980790819496e-16 2.8517360085299336e-31" />
         <parent link="left_drive_beam" />
         <child link="left_finger_base" />
-        <axis xyz="0.0 -0.9999999999999978 5.551115123933576e-17" />
+        <axis xyz="0.0 0.0 1.0" />
     </joint>
     <joint name="fusion_camera2phone" type="fixed">
         <origin xyz="0.058341470000000006 0.004890510134681598 0.03084570491507006" rpy="-2.8707087257520376 -5.720038651728236e-17 -1.4821227114525488e-18" />
@@ -426,12 +426,12 @@
         <child link="flange" />
     </joint>
     <joint name="left_finger2left_finger_base" type="fixed">
-        <origin xyz="-0.00594 0.0 -0.050265" rpy="-3.1415926535897922 -0.242897472000051 3.1415926535897922" />
+        <origin xyz="-0.00594 -0.050265 0.0" rpy="-1.5707963267965035 0.0 2.89869518158974" />
         <parent link="left_finger_base" />
         <child link="left_finger" />
     </joint>
     <joint name="right_finger2right_finger_base" type="fixed">
-        <origin xyz="0.00594 0.0 0.050265" rpy="0.0 0.242897472000051 0.0" />
+        <origin xyz="0.00594 0.050265 0.0" rpy="-1.5707963267965035 0.0 -0.242897472000051" />
         <parent link="right_finger_base" />
         <child link="right_finger" />
     </joint>
