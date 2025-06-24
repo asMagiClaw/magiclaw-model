@@ -15,12 +15,11 @@
         <mesh name="right_finger_base" file="../meshes/right_finger_base.stl" scale="0.001 0.001 0.001" />
         <mesh name="right_finger" file="../meshes/right_finger.stl" scale="0.001 0.001 0.001" />
         <mesh name="top_nameplate" file="../meshes/top_nameplate.stl" scale="0.001 0.001 0.001" />
-        <mesh name="phone_camera" file="../meshes/phone_camera.stl" scale="0.001 0.001 0.001" />
+        <mesh name="fusion_camera" file="../meshes/fusion_camera.stl" scale="0.001 0.001 0.001" />
         <mesh name="bottom_nameplate" file="../meshes/bottom_nameplate.stl" scale="0.001 0.001 0.001" />
     </asset>
     <worldbody>
         <light directional="true" pos="-0.5 0.5 3" dir="0 0 -1" />
-        <geom pos="0 0 0" size="1 1 1" type="plane" rgba="1 0.83 0.61 0.5" />
         <body name="shell" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
             <geom name="shell_geom" type="mesh" mesh="shell" pos="0 0 0" euler="0 0 0" />
             <inertial mass="1.1547124958310249" pos="0.09215419082197362 -3.0360999473407925e-08 0.003155929862125859" fullinertia="0.0011731060061113516 0.002535696012427195 0.0021289998515155277 8.443177599909338e-09 0.00031236232114537456 -1.5227905621184584e-08" />
@@ -37,8 +36,8 @@
                     <body name="phone" pos="-5.230815780521425e-15 0.040351728941137796 -0.007543022429482527" euler="1.0802247528272196e-16 0.270883927837755 1.5707963267948963">
                         <geom name="phone_geom" type="mesh" mesh="phone" pos="0 0 0" euler="0 0 0" />
                         <inertial mass="0.5883914302022325" pos="0.00019571061796769653 0.0007302222847212891 0.0035262713385931037" fullinertia="0.0010493295288383684 0.00025022135000802285 0.0012943914287563507 -6.1008322796555256e-06 4.7327231065278025e-07 1.3768260114195368e-06" />
-                        <body name="phone_camera" pos="0.023758707046508898 0.06175000190734866 -0.001250000000000031" euler="-5.5511151231257815e-17 6.938893903907227e-18 -1.5707963267948966">
-                            <geom name="phone_camera_geom" type="mesh" mesh="phone_camera" pos="0 0 0" euler="0 0 0" />
+                        <body name="fusion_camera" pos="0.023758707046508898 0.06175000190734866 -0.001250000000000031" euler="-5.5511151231257815e-17 6.938893903907227e-18 -1.5707963267948966">
+                            <geom name="fusion_camera_geom" type="mesh" mesh="fusion_camera" pos="0 0 0" euler="0 0 0" />
                             <inertial mass="7.850000000000001e-06" pos="2.5106056556617462e-18 3.144186300207963e-18 0.0005000000000000059" fullinertia="1.3083333333572649e-12 1.3083333333215442e-12 1.308333333364686e-12 1.4109982669340974e-23 -1.5103341564744239e-24 -8.964993980166084e-24" />
                         </body>
                     </body>
@@ -92,4 +91,16 @@
             </body>
         </body>
     </worldbody>
+    <actuator>
+        <position name="left_drive_beam2shell" joint="left_drive_beam2shell" ctrlrange="-3.14 3.14" ctrllimited="true" kp="1000" forcelimited="true" forcerange="-20 20" />
+        <position name="left_finger_base2left_drive_beam" joint="left_finger_base2left_drive_beam" ctrlrange="-3.14 3.14" ctrllimited="true" kp="1000" forcelimited="true" forcerange="-20 20" />
+        <position name="left_follow_beam2shell" joint="left_follow_beam2shell" ctrlrange="-3.14 3.14" ctrllimited="true" kp="1000" forcelimited="true" forcerange="-20 20" />
+        <position name="right_drive_beam2shell" joint="right_drive_beam2shell" ctrlrange="-3.14 3.14" ctrllimited="true" kp="1000" forcelimited="true" forcerange="-20 20" />
+        <position name="right_finger_base2right_drive_beam" joint="right_finger_base2right_drive_beam" ctrlrange="-3.14 3.14" ctrllimited="true" kp="1000" forcelimited="true" forcerange="-20 20" />
+        <position name="right_follow_beam2shell" joint="right_follow_beam2shell" ctrlrange="-3.14 3.14" ctrllimited="true" kp="1000" forcelimited="true" forcerange="-20 20" />
+    </actuator>
+    <sensor>
+        <force name="force_ee" site="ft_frame"/>
+        <torque name="torque_ee" site="ft_frame"/>
+    </sensor>
 </mujoco>
