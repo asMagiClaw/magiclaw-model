@@ -5,11 +5,12 @@ physicsClient = p.connect(p.GUI)#or p.DIRECT for non-graphical version
 p.setAdditionalSearchPath(pybullet_data.getDataPath()) #optionally
 p.setGravity(0,0,-10)
 planeId = p.loadURDF("plane.urdf")
-cubeStartPos = [0,0,0]
+cubeStartPos = [0,0,0.5]
 cubeStartOrientation = p.getQuaternionFromEuler([0,0,0])
-robotID = p.loadURDF("magiclaw-handle.urdf",cubeStartPos, cubeStartOrientation, 
+robotID = p.loadURDF("magiclaw/urdf/magiclaw-in-hand.urdf",cubeStartPos, cubeStartOrientation, 
                    # useMaximalCoordinates=1, ## New feature in Pybullet
-                   flags=p.URDF_USE_INERTIA_FROM_FILE)
+                   flags=p.URDF_USE_INERTIA_FROM_FILE,
+                   useFixedBase=True) #useFixedBase=True to fix the robot base
 for i in range (10000):
     p.stepSimulation()
     time.sleep(1./240.)
