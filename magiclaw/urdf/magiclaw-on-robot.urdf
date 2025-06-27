@@ -411,7 +411,7 @@
         <child link="fusion_camera_frame" />
     </joint>
     <joint name="top_nameplate2shell" type="fixed">
-        <origin xyz="-7.100000000310087e-07 0.029819740001077562 0.09889925999967496" rpy="-1.5707963267963456 0.25192402054702323 -1.5707963268007117" />
+        <origin xyz="-7.100000000310087e-07 0.029819740001077562 0.09889925999967496" rpy="1.5707963267963456 0.25192402054702323 -1.5707963268007117" />
         <parent link="shell" />
         <child link="top_nameplate" />
     </joint>
