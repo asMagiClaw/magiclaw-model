@@ -16,7 +16,7 @@ The structure of the repository is as follows:
 │   └── mjcf
 │       ├── magiclaw-in-hand.xml
 │       └── magiclaw-on-robot.xml
-└── magiclaw-usd
+└── magiclaw_usd
     ├── magiclaw-in-hand.usd
     └── magiclaw-on-robot.usd
 ```
