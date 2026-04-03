@@ -104,7 +104,7 @@
                     <geom name="right_finger_base_geom" type="mesh" mesh="right_finger_base" material="white" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
                     <geom name="right_finger_base_col" type="mesh" mesh="right_finger_base" pos="0 0 0" euler="0 0 0" mass="0.005"/>
                     <inertial mass="0.21505288373601508" pos="-0.014768797598518372 0.03386385239866641 -0.00014238687017583093" fullinertia="8.066078096590284e-05 6.384828951789886e-05 8.362186535634832e-05 2.3171129203098413e-06 -1.1471139454710393e-07 -1.5572914780452508e-07" />
-                    <body name="right_finger" pos="-0.013112876976025074 0.050575578034017854 6.776712400645424e-09" euler="1.5707974266846267 -3.716203311660934e-16 2.8986899383828715">
+                    <body name="right_finger" pos="-0.013112876976025074 0.050575578034017854 6.776712400645424e-09" euler="1.5707974266846267 3.141592653589793 2.8986899383828715">
                         <geom name="right_finger_geom" type="mesh" mesh="right_finger" material="orange" pos="0 0 0" euler="0 0 0" group="1" contype="0" conaffinity="0"/>
                         <geom name="right_finger_col" type="mesh" mesh="right_finger" pos="0 0 0" euler="0 0 0" mass="0.005"/>
                         <inertial mass="0.13441512527440586" pos="4.507131994013758e-11 -3.490209283359749e-09 0.034473612206563954" fullinertia="0.00011659143299408043 0.00011016443626296011 3.945295608281265e-05 -9.008281834423496e-18 -3.119908303060581e-14 3.10139830348772e-14" />

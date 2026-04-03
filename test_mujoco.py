@@ -6,7 +6,7 @@ import mujoco.viewer
 import numpy as np
 
 parser = argparse.ArgumentParser(description="Run a MuJoCo simulation with a viewer.")
-parser.add_argument("--model", type=str, default="magiclaw/mjcf/magiclaw-in-hand-surf.xml", help="Path to the MuJoCo model XML file.")
+parser.add_argument("--model", type=str, default="magiclaw/mjcf/magiclaw-in-hand.xml", help="Path to the MuJoCo model XML file.")
 args = parser.parse_args()
 
 model = mujoco.MjModel.from_xml_path(args.model)
